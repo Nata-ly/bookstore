@@ -2,7 +2,7 @@
 
 <img src="<%= book.picture_url %>" alt="">
 <h2>
-  <%= book.title %>
+  <%= link_to book.title, book_path(book) %>
 </h2>
 <p>
   Автор: <%= book.author %>
