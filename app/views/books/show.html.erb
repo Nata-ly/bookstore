@@ -1,4 +1,4 @@
-<img src="<%= @book.picture_url %>" alt="">
+<%= image_tag( root_url + @book.picture_url, :alt => "rss feed") -%>
 <h2>
   <%= @book.title %>
 </h2>
