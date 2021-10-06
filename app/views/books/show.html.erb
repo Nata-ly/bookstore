@@ -14,6 +14,17 @@
 <p>
   Описание: <%= @book.description %>
 </p>
+
+<h2>Отзывы:</h2>
+</p>
+<% @book.comments.each do |comment| %>
+  <p>
+    <%= comment.author %><br>
+    Оценка: <%= comment.estimate %><br>
+    <%= comment.body %>
+  </p>
+<% end %>
+
 <h2>Добавьте комментарий:</h2>
 <p>
   <%= form_for([@book, @book.comments.build]) do |f| %>
@@ -34,3 +45,4 @@
     </p>
   <% end %>
 </p>
+<p>
