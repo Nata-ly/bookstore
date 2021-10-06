@@ -14,3 +14,23 @@
 <p>
   Описание: <%= @book.description %>
 </p>
+<h2>Добавьте комментарий:</h2>
+<p>
+  <%= form_for([@book, @book.comments.build]) do |f| %>
+    <p>
+      <%= f.label :author %> <br>
+      <%= f.text_field :author %>
+    </p>
+    <p>
+      <%= f.label :estimate %><br>
+      <%= f.number_field :estimate, in: 1..5, step: 1 %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_field :body %>
+    </p>
+    <p>
+      <%= f.submit %><br>
+    </p>
+  <% end %>
+</p>
