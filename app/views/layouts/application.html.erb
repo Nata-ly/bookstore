@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Книжный магазин</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
     <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
     <% else %>
-    <%= link_to 'Профиль', new_user_session_path %>  
+    <%= link_to 'Профиль', new_user_session_path %>
     <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
