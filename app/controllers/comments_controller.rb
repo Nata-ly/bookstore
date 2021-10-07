@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, :onlu => [:create]
 
   def create
     @book = Book.find(params[:book_id])
