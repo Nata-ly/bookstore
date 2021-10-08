@@ -10,6 +10,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @book = Book.find(params[:book_id])
+    @comment = @book.comments.find(params[:id])
+    if current_user.id == @comment.user_id
+    @comment.destroy
+    redirect_to book_path(@book)
+    end
+  end
+
   private
 
   def comment_params
