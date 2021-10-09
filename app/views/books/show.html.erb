@@ -1,20 +1,25 @@
-<%= image_tag( root_url + @book.picture_url, :alt => "rss feed") -%>
-<h2>
-  <%= @book.title %>
-</h2>
-<p>
-  Автор: <%= @book.author %>
-</p>
-<p>
-  Стоимость: <%= @book.price %>
-</p>
-<p>
-  Категория: <%= @book.category %>
-</p>
-<p>
-  Описание: <%= @book.description %>
-</p>
-
+<div class="row">
+  <div class="col-2 bg-light">
+    <%= image_tag( root_url + @book.picture_url, :alt => "rss feed", :class => 'img-thumbnail' ) -%>
+  </div>
+  <div class="col-10 bg-light">
+    <h2>
+      <%= @book.title %>
+    </h2>
+    <p>
+      Автор: <%= @book.author %>
+    </p>
+    <p>
+      Стоимость: <%= @book.price %>
+    </p>
+    <p>
+      Категория: <%= @book.category %>
+    </p>
+    <p>
+      Описание: <%= @book.description %>
+    </p>
+  </div>
+</div>
 <h2>Отзывы:</h2>
 </p>
 <% @book.comments.each do |comment| %>
