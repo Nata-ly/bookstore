@@ -1,4 +1,4 @@
-<%= form_for(@comment|| [@book, Comment.new]) do |f| %>
+<%= form_for(@comment.nil? ? [@book, @book.comments.build] : [:book, @comment])   do |f| %>
   <p>
     <%= f.label :estimate %><br>
     <%= f.number_field :estimate, in: 1..5, step: 1 %>
