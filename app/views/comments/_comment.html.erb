@@ -1,0 +1,12 @@
+  <p>
+    <%= comment.author %><br>
+    Оценка: <%= comment.estimate %><br>
+    <%= comment.body %><br>
+    <% if user_signed_in? %>
+      <% if current_user.id == comment.user_id %>
+        <%= link_to 'Удалить', [comment.book, comment],
+                 method: :delete,
+                 data: { confirm: 'Вы уверены?' } %>
+      <% end %>
+    <% end %>
+  </p>
