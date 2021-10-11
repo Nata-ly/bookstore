@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, :onlu => [:create]
+  before_action :authenticate_user!, :only => [:create, :edit, :update, :destroy]
   before_action :find_comment, :only => [:edit, :update]
   before_action :find_book, :only => [:create, :destroy]
 
