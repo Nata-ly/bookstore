@@ -40,7 +40,8 @@
 <h2>Добавьте комментарий:</h2>
 <p>
   <% if user_signed_in? %>
-    <%= form_for([@book, @book.comments.build]) do |f| %>
+
+    <%= form_for(@comment|| [@book, Comment.new]) do |f| %>
       <p>
         <%= f.label :estimate %><br>
         <%= f.number_field :estimate, in: 1..5, step: 1 %>
