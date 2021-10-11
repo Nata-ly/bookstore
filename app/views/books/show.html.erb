@@ -40,20 +40,7 @@
 <h2>Добавьте комментарий:</h2>
 <p>
   <% if user_signed_in? %>
-
-    <%= form_for(@comment|| [@book, Comment.new]) do |f| %>
-      <p>
-        <%= f.label :estimate %><br>
-        <%= f.number_field :estimate, in: 1..5, step: 1 %>
-      </p>
-      <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-      </p>
-      <p>
-        <%= f.submit %><br>
-      </p>
-    <% end %>
+    <%= render 'comments/form' %>
   <% else %>
     <p>
       <%= link_to 'Войдите', new_user_session_path %>, чтобы оставить комментарий
