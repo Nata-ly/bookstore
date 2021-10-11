@@ -10,6 +10,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update_attributes(comment_params)
+      redirect_to book_path(@comment.book_id), :notice => 'Комментарий изменен'
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @book = Book.find(params[:book_id])
     @comment = @book.comments.find(params[:id])
