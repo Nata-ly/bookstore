@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, :only => [:create, :edit, :update, :destroy]
-  before_action :find_comment, :only => [:edit, :update]
+  before_action :find_comment, :only => [:edit, :update, :destroy]
   before_action :find_book, :only => [:create, :destroy]
+  before_action :check_author_comment, :only => [:destroy, :edit, :update]
 
   def create
     comment = @book.comments.new(comment_params)
@@ -23,11 +24,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @book.comments.find(params[:id])
-    if current_user.id == @comment.user_id
     @comment.destroy
     redirect_to book_path(@book)
-    end
   end
 
   private
@@ -37,7 +35,6 @@ class CommentsController < ApplicationController
   end
 
   def set_user(comment)
-    comment.author = current_user.username
     comment.user_id = current_user.id
     comment
   end
@@ -50,4 +47,7 @@ class CommentsController < ApplicationController
     @book = Book.find(params[:book_id])
   end
 
+  def check_author_comment
+    @comment.author == current_user.username ? true : false
+  end
 end
