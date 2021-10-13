@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book
-    @books = @books.where(author_id: params[:author])
+    @books = @books.where(author_id: params[:author]) if params[:author]
     @books = @books.order(:id)
   end
 
