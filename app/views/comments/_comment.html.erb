@@ -1,5 +1,5 @@
   <p>
-    <%= comment.author %><br>
+    <%= comment.user.username %><br>
     Оценка: <%= comment.estimate %><br>
     <%= comment.body %><br>
     <% if user_signed_in? %>

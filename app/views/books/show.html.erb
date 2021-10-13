@@ -21,7 +21,7 @@
   </div>
 </div>
 <h2>Отзывы:</h2>
-<%= render @book.comments %>
+<%= render @book.comments.joins(:user) %>
 
 <h2>Добавьте комментарий:</h2>
 <p>
