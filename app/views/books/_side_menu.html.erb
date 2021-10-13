@@ -2,6 +2,22 @@
 <p>
   <h5>Категория:</h5>
 </p>
+<p>
+  <%= form_for('', method: :get) do |f| %>
+    <%= f.collection_radio_buttons(:category,
+                                   Category.order(:category),
+                                   :id,
+                                   :category ) do |b| %>
+      <div>
+        <%= b.radio_button %>
+        <%= b.label %>
+      </div>
+    <% end %>
+    <p>
+    <%= submit_tag("Поиск", class: "btn btn-info") %>
+    </p>
+  <% end %>
+</p>
 
 <div>
   <h5>Поиск по автору:</h5>
