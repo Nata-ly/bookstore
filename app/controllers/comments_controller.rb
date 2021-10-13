@@ -48,6 +48,6 @@ class CommentsController < ApplicationController
   end
 
   def check_author_comment
-    @comment.author == current_user.username ? true : false
+    @comment.user_id == current_user.id ? true : false
   end
 end
