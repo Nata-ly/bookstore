@@ -7,7 +7,7 @@
     <%= f.collection_radio_buttons(:category,
                                    Category.order(:category),
                                    :id,
-                                   :category ) do |b| %>
+                                   :category) do |b| %>
       <div>
         <%= b.radio_button %>
         <%= b.label %>
