@@ -1,0 +1,33 @@
+doctype 5
+html
+  head
+    title Книжный магазин
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container-xxl
+      .row class = 'bg-light p-3 border'
+        .col-3 class = 'offset-3' align = 'right'
+          | +7 777 777-77-77 — круглосуточно
+        .col-2 class = 'offset-3' align = 'right'
+          | Оплата и доставка
+        .col-1 align = 'right'
+          = link_to 'Помощь', help_path
+      .row class ='justify-content-between'
+        .col-2
+          = image_tag(root_url + 'logo.png', height: '140', class: 'rounded float-start')
+        .col-4 class = 'offset-6 align-self-center' align = 'right'
+          - if user_signed_in?
+            = "Добро пожаловать,  #{current_user.username}  ! | "
+            =  link_to 'Выход', destroy_user_session_path, method: :delete
+          - else
+            = link_to 'Профиль', new_user_session_path
+      .row
+        .col-3
+          = yield :side_menu
+        .col-9
+          p.notice = notice
+          p.alert = alert
+          = yield
