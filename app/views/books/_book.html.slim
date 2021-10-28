@@ -1,0 +1,13 @@
+.col
+  .card class = 'h-100'
+    .card-body
+      = image_tag(root_url + book.picture_url, class: 'img-thumbnail card-img-top')
+      .card-body
+      h6.card-title
+        = link_to book.title, book_path(book)
+        br
+      | Автор:
+      = book.author.author
+    .card-footer
+      | Стоимость:
+      = book.price

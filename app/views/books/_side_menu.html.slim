@@ -1,0 +1,17 @@
+p = link_to 'Все книги', books_path
+
+h5 Категория:
+= form_for('', method: :get, url: books_path) do |f|
+  p = f.collection_radio_buttons(:category,
+    Category.order(:category), :id, :category) do |b|
+      = b.radio_button
+      = b.label
+      br
+  p = submit_tag("Поиск", class: 'btn btn-info')
+
+h5 Поиск по автору:
+= form_tag(books_path, method: :get) do
+  p = collection_select :author,
+    nil,  Author.all.order('author'), :id,
+    :author, {include_blank: 'Выберите автора'}
+  p = submit_tag('Поиск', class: 'btn btn-info')

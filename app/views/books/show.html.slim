@@ -1,0 +1,28 @@
+- # Боковое меню
+- content_for :side_menu do
+  = render 'side_menu'
+
+- # Отображение книги
+.row
+  .col-2 class = 'bg-light'
+    = image_tag(root_url + @book.picture_url, class: 'img-thumbnail')
+  .col-10 class = 'bg-light'
+    h2 = @book.title
+    p = "Автор: #{@book.author.author}"
+    p = "Стоимость: #{@book.price}"
+    p = "Категория: #{@book.category.category}"
+.row
+p = " Описание: #{@book.description}"
+
+- # Отзывы
+h2 Отзывы:
+= render @book.comments.joins(:user)
+
+- # Форма добавления комментария
+h2 Добавьте комментарий:
+p
+  - if user_signed_in?
+    = render 'comments/form'
+  - else
+    = link_to 'Войдите', new_user_session_path
+    = ", чтобы оставить комментарий"
