@@ -1,0 +1,11 @@
+= form_for(@comment.nil? ? [@book, @book.comments.build] : [:book, @comment]) do |f|
+    p
+      = f.label :estimate
+      br
+      = f.number_field :estimate, in: 1..5, step: 1
+    p
+      = f.label :body
+      br
+      = f.text_area :body
+    p
+      = f.submit class: 'btn btn-info'
