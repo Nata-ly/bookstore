@@ -28,6 +28,8 @@ html
         .col-3
           = yield :side_menu
         .col-9
-          p.notice = notice
-          p.alert = alert
+          - if notice
+            p.notice = notice
+          - if alert
+            p.alert = alert 
           = yield
