@@ -1,0 +1,16 @@
+<div class="col">
+  <div class="card h-100">
+    <div class="card-body">
+      <img src="<%= book.picture_url %>" alt="" class="img-thumbnail card-img-top">
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">
+      <%= link_to book.title, book_path(book) %><br>
+      Автор: <%= book.author.author %>
+      </h6>
+    </div>
+    <div class="card-footer">
+      Стоимость: <%= book.price %>
+    </div>
+  </div>
+</div>
