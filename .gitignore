@@ -31,3 +31,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/app/assets/javascripts/ext-4.2.1.883
+/app/assets/stylesheets/manager/ext-theme-classic
