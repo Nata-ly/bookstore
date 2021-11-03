@@ -25,7 +25,7 @@ Ext.define 'BS.view.manager.TabPanel',
   TABS: [
     {
       title: 'Книги'
-      xtype: 'books_page'
+      xtype: 'books_panel'
       order: 10
     },
     {
@@ -54,6 +54,7 @@ Ext.define 'BS.view.manager.TabPanel',
 
       item.tooltip = "Alt+#{String.fromCharCode(item.key)}" if item.key
       items.push(item)
+    items
 
   setHtml: (page) ->
     "<iframe src=\"/manager/#{page}\" height='100%' width='100%'\" onload=\"window.initIframeKeyMapHandler()\"></iframe>"
