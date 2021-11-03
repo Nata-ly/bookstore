@@ -1,2 +1,2 @@
-//= require_tree ./manager/view
+//= require_tree ./manager
 //= require ./manager/app
