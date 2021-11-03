@@ -8,6 +8,9 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
+    javascript:
+      window.books_store_config = #{render('layouts/config').html_safe};
+
     = javascript_include_tag 'ext-4.2.1.883/ext-all'
     = stylesheet_link_tag 'manager/ext-all'
     = javascript_include_tag 'ext-4.2.1.883/locale/ext-lang-ru'
