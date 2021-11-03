@@ -10,6 +10,11 @@ Ext.application
         region: "north"
         layout: "border"
         height: 40
+        style:
+          borderColor: '#333'
+          borderStyle: 'solid'
+          background: "#333"
+          Color: '#ffffff'
         items: [
           xtype: "container"
           layout: "hbox"
