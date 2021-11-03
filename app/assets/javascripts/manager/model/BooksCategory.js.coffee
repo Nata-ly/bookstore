@@ -4,4 +4,4 @@ Ext.define "BS.model.BooksCategory",
     { name: 'category_id', type: 'int' }
     { name: 'category', type: 'string' }
   ]
-  idProperty: "id"
+  idProperty: "category_id"

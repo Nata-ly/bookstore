@@ -1,6 +1,6 @@
 booksCategoryList = (->
   result = []
-  for stdin, category  of window.books_store_config.book_categories
+  for category, category  of window.books_store_config.book_categories
     result.push(category_id: category.id, category: category.category)
   result)()
 
