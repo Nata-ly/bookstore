@@ -60,4 +60,12 @@ Ext.application
         xtype: "manager_tabpanel"
         region: "center"
       ]
+  controllers: [
+    'Books'
+  ]
+  stores: [
+    "BooksCategory",
+    "Books"
+  ]
+
   renderTo: Ext.getBody()
