@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show] do
     resources :comments
   end
+  get 'manager' => 'manager/index#index'
   namespace :manager do
     resources :categories, expect: [:show]
     resources :authors, expect: [:show]
