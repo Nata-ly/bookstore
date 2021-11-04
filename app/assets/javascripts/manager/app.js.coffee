@@ -1,6 +1,6 @@
 Ext.application
   name: 'BS'
-  appFolder: '/assets/app'
+  appFolder: '/assets/manager'
   launch: () ->
     Ext.create "Ext.container.Viewport",
       layout: "border"
