@@ -1,4 +1,4 @@
-Ext.define "BS.view.books.Filters",
+Ext.define "BS.view.books.Filter",
   extend      : "Ext.form.Panel"
   alias       : "widget.books_filters"
   title       : "Фильтры"
