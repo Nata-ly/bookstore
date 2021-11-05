@@ -1,11 +1,11 @@
 version: "3.9"
 services:
   db:
-    image: nouchka/sqlite3:latest
-    stdin_open: true
-    tty: true
+    image: postgres
     volumes:
-      - ./db:/var/lib/
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"

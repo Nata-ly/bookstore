@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_11_04_114804) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authors", force: :cascade do |t|
     t.string "author"
     t.datetime "created_at", null: false
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_11_04_114804) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id"
-    t.integer "category_id"
+    t.bigint "author_id"
+    t.bigint "category_id"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
   end
@@ -40,10 +43,10 @@ ActiveRecord::Schema.define(version: 2021_11_04_114804) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "estimate"
-    t.integer "book_id"
+    t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["book_id"], name: "index_comments_on_book_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -65,10 +68,13 @@ ActiveRecord::Schema.define(version: 2021_11_04_114804) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.boolean "manager"
+    t.boolean "manager", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "categories"
+  add_foreign_key "comments", "books"
 end
