@@ -25,6 +25,8 @@ Ext.define "BS.controller.Books",
         click: @search
       "books_filters combobox":
         select: @search
+      "books_list button[action=create]":
+        click: @addNewBook
 
 
   addTabsEvents: ->
@@ -51,3 +53,6 @@ Ext.define "BS.controller.Books",
   selectCurrentRecord: ->
     rec = @getGrid().getStore().getById(@currentId)
     @getGrid().getSelectionModel().select(rec) if rec
+
+  addNewBook: ->
+    

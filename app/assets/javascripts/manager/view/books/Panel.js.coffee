@@ -25,5 +25,7 @@ Ext.define "BS.view.books.Panel",
     region: "center"
     border: false
     items: [
+      xtype: "book_properties"
+      region: "center"
     ]
   ]
