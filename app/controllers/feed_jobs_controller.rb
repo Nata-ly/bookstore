@@ -1,2 +1,0 @@
-class FeedJobsController < ApplicationController
-end
