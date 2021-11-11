@@ -29,6 +29,11 @@ Ext.define 'BS.view.manager.TabPanel',
       order: 10
     },
     {
+      title: 'Фиды'
+      url: 'feed_jobs'
+      order: 20
+    },    
+    {
       title: 'Владельцы'
       xtype: 'vladelcy'
       order: 20
