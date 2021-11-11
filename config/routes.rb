@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :categories, expect: [:show]
     resources :authors, expect: [:show]
     resources :books
+    resources :feed_jobs
   end
 end
