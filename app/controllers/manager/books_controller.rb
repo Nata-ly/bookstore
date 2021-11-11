@@ -1,6 +1,5 @@
 class Manager::BooksController < ApplicationController
-layout 'manager'
-
+  layout 'manager'
 
   def index
     @books = Book.all
