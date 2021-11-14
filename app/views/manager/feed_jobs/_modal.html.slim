@@ -1,0 +1,6 @@
+.feed-jobs-popup-bg
+  .feed-jobs-popup
+    = form_for 'add' do |f|
+      = f.file_field :files, accept: 'text/txt', class: 'form-control'
+      = link_to 'Закрыть', '#', class:'btn btn-secondary close-popup'
+      = link_to 'Добавить фид', manager_add_feed_path, class:'btn btn-secondary'
