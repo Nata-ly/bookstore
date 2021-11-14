@@ -5,4 +5,8 @@ class Manager::FeedJobsController < ApplicationController
 
   end
 
+  def add_feed
+
+  end
+
 end

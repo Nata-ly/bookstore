@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :categories, expect: [:show]
     resources :authors, expect: [:show]
     resources :books
-    resources :feed_jobs
+    resources :feed_jobs, only: [:index, :show, :update, :destroy]
+    get '/add_feed', to: 'feed_jobs#add_feed', as: :add_feed 
+
   end
 end
